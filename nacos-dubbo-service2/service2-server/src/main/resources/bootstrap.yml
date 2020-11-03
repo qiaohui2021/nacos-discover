@@ -1,0 +1,28 @@
+server:
+  port: 56040 #启动端口，命令行注入
+spring:
+  application:
+    name: dubbo-service2
+  main:
+    allow-bean-definition-overriding: true #当bean重名时，进行覆盖，不报错Spring Boot2.1需要设定
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 #服务发现中心地址
+dubbo:
+  protocol:
+    name: dubbo
+    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+    port: -1
+  registry:
+    address: nacos://127.0.0.1:8848
+  application:
+    name: service2Api
+    qos-enable: false #dubbo运维是否开启
+  consumer:
+    check: false #启动时是否检查依赖的服务
+  cloud:
+    subscribed-services: dubbo-service2
+#  scan:
+#  #dubbo 服务扫描基础包
+#    base-packages: nacos.dubbo.service2

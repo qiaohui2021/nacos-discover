@@ -16,3 +16,9 @@ spring:
 nacos-restful-provider:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+# dubbo配置
+dubbo:
+  application:
+    name: nacos-restful-consumer
+  registry:
+    address: nacos://127.0.0.1:8848

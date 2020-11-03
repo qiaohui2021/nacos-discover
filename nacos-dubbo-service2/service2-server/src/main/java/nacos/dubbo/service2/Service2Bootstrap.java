@@ -1,4 +1,4 @@
-package com.demo.nacos.consumer;
+package nacos.dubbo.service2;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @EnableDubbo
 @SpringBootApplication
-public class SpringRestConsumerBootstrap {
+public class Service2Bootstrap {
     public static void main(String[] args) {
-        SpringApplication.run(SpringRestConsumerBootstrap.class, args);
+        SpringApplication.run(Service2Bootstrap.class, args);
     }
 }
