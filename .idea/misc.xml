@@ -7,6 +7,10 @@
     <option name="priority" value="Medium" />
     <option name="excludeFilter" value="" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/nacos-dubbo-service2/service2-server" />
+    <file type="web" url="file://$PROJECT_DIR$/nacos-restful-consumer" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

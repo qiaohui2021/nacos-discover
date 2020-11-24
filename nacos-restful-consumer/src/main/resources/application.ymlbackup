@@ -1,0 +1,38 @@
+server:
+  port: 56020
+
+#服务提供方IP和端口
+#provider:
+  #address: 127.0.0.1:56010
+spring:
+  application:
+    name: nacos-restful-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 #服务发现中心地址
+#        namespace: 058ba3f5-c569-4929-ae04-b6a78c603991
+      config:
+        server-addr: 127.0.0.1:8848 #配置中心地址
+        file-extension: yaml   #配置文件扩展名，配置文件名称根据application.name的名称加扩展名拼接，为nacos-restful-consumer.yaml
+
+#配置负载均衡策略
+nacos-restful-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+
+dubbo:
+  application:
+    name: nacos-restful-consumer
+  registry:
+    address: nacos://127.0.0.1:8848
+
+
+# ===== 自定义swagger配置 ===== #
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  application-description: springfox swagger 3.0整合Demo
+  try-host: http://localhost:${server.port}

@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="nacos-restful-consumer" />
-        <module name="service2-server" />
+        <module name="service1-server" />
         <module name="nacos-restful-provider" />
+        <module name="service1-api" />
+        <module name="service2-server" />
         <module name="service2-api" />
       </profile>
     </annotationProcessing>
